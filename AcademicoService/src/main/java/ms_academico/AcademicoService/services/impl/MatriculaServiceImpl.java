@@ -1,8 +1,8 @@
-package ms_academico.AcademicoService.services.impl;
+package ms_academico.academicoservice.services.impl;
 
-import ms_academico.AcademicoService.model.Matricula;
-import ms_academico.AcademicoService.repository.MatriculaRepository;
-import ms_academico.AcademicoService.services.MatriculaService;
+import ms_academico.academicoservice.model.Matricula;
+import ms_academico.academicoservice.repository.MatriculaRepository;
+import ms_academico.academicoservice.services.MatriculaService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,8 +1,8 @@
-package ms_academico.AcademicoService.controller;
+package ms_academico.academicoservice.controller;
 
 
-import ms_academico.AcademicoService.model.Matricula;
-import ms_academico.AcademicoService.services.MatriculaService;
+import ms_academico.academicoservice.model.Matricula;
+import ms_academico.academicoservice.services.MatriculaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

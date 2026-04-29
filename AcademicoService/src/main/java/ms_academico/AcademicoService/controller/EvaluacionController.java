@@ -1,8 +1,8 @@
-package ms_academico.AcademicoService.controller;
+package ms_academico.academicoservice.controller;
 
 
-import ms_academico.AcademicoService.model.Evaluacion;
-import ms_academico.AcademicoService.services.EvaluacionService;
+import ms_academico.academicoservice.model.Evaluacion;
+import ms_academico.academicoservice.services.EvaluacionService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

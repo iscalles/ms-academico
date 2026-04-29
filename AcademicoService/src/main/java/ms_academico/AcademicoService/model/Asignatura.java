@@ -1,4 +1,4 @@
-package ms_academico.AcademicoService.model;
+package ms_academico.academicoservice.model;
 
 
 import jakarta.persistence.*;

@@ -1,7 +1,7 @@
-package ms_academico.AcademicoService.controller;
+package ms_academico.academicoservice.controller;
 
-import ms_academico.AcademicoService.model.CursoAsignatura;
-import ms_academico.AcademicoService.services.CursoAsignaturaService;
+import ms_academico.academicoservice.model.CursoAsignatura;
+import ms_academico.academicoservice.services.CursoAsignaturaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

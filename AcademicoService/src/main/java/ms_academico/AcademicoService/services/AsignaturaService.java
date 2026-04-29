@@ -1,6 +1,6 @@
-package ms_academico.AcademicoService.services;
+package ms_academico.academicoservice.services;
 
-import ms_academico.AcademicoService.model.Asignatura;
+import ms_academico.academicoservice.model.Asignatura;
 import java.util.List;
 
 public interface AsignaturaService {

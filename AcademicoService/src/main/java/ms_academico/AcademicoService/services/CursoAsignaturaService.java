@@ -1,6 +1,6 @@
-package ms_academico.AcademicoService.services;
+package ms_academico.academicoservice.services;
 
-import ms_academico.AcademicoService.model.CursoAsignatura;
+import ms_academico.academicoservice.model.CursoAsignatura;
 
 import java.util.List;
 

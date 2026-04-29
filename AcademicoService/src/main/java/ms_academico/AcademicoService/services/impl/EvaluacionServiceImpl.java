@@ -1,9 +1,9 @@
-package ms_academico.AcademicoService.services.impl;
+package ms_academico.academicoservice.services.impl;
 
 
-import ms_academico.AcademicoService.model.Evaluacion;
-import ms_academico.AcademicoService.repository.EvaluacionRepository;
-import ms_academico.AcademicoService.services.EvaluacionService;
+import ms_academico.academicoservice.model.Evaluacion;
+import ms_academico.academicoservice.repository.EvaluacionRepository;
+import ms_academico.academicoservice.services.EvaluacionService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
