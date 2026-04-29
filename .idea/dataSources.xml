@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Oracle" uuid="cd351c86-3398-466f-a9d2-b4fc2c4f931c">
+      <driver-ref>oracle.19</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.driver.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@proyectolibroasistencia_low</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="TNSADMIN_DIR" value="$PROJECT_DIR$/../../../Downloads/Wallet_proyectoLibroAsistencia" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="javax.net.ssl.keyStore" value="true" />
+        <property name="javax.net.ssl.keyStorePassword" value="Grupomarisa0605" />
+        <property name="javax.net.ssl.trustStore" value="true" />
+        <property name="javax.net.ssl.trustStorePassword" value="Grupomarisa0605" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>
