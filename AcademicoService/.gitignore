@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/main/resources/wallet
-src/main/resources
+src/main/resources/**
 
 ### STS ###
 .apt_generated
@@ -33,3 +33,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/
