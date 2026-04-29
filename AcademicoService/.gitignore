@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 src/main/resources/wallet
 src/main/resources/**
-/src/main/resources/
+AcademicoService/src/main/resources/
 
 ### STS ###
 .apt_generated
