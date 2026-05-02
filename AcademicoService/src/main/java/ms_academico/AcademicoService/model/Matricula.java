@@ -10,7 +10,7 @@ public class Matricula {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matricula_seq")
     @SequenceGenerator(name = "matricula_seq", sequenceName = "seq_matricula", allocationSize = 1)
-    private Long id;
+    private Long id_matricula;
 
     @Column(name = "ANIO_ACADEMICO_MATRICULA")
     private Long anioAcademicoMatricula;
@@ -27,7 +27,7 @@ public class Matricula {
     }
 
     public Matricula(Long id, Long anioAcademicoMatricula, Curso cursoIdCurso, String estudianteUsuarioRutUsuario) {
-        this.id = id;
+        this.id_matricula = id;
         this.anioAcademicoMatricula = anioAcademicoMatricula;
         this.cursoIdCurso = cursoIdCurso;
         this.estudianteUsuarioRutUsuario = estudianteUsuarioRutUsuario;
@@ -58,10 +58,10 @@ public class Matricula {
     }
 
     public Long getId() {
-        return id;
+        return id_matricula;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_matricula = id;
     }
 }

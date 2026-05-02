@@ -9,7 +9,7 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "curso_seq")
     @SequenceGenerator(name = "curso_seq", sequenceName = "seq_curso", allocationSize = 1)
-    private Long id;
+    private Long id_curso;
 
     @Column(name = "GRADO_CURSO", length = 10)
     private String gradoCurso;
@@ -29,7 +29,7 @@ public class Curso {
     }
 
     public Curso(Long id, String gradoCurso, String seccionCurso, Long anioCurso) {
-        this.id = id;
+        this.id_curso = id;
         this.gradoCurso = gradoCurso;
         this.seccionCurso = seccionCurso;
         this.anioCurso = anioCurso;
@@ -56,10 +56,10 @@ public class Curso {
     }
 
     public Long getId() {
-        return id;
+        return id_curso;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_curso = id;
     }
 }

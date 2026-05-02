@@ -34,7 +34,6 @@ public class AsignaturaServiceImpl implements AsignaturaService {
     public Asignatura actualizarAsignatura(Asignatura asignatura, Long id) {
         Asignatura asignaturaExistente = asignaturaRepository.findById(id).orElse(null);
         if (asignaturaExistente != null) {
-            asignaturaExistente.setId_asignatura(asignatura.getId_asignatura());
             asignaturaExistente.setNombreAsignatura(asignatura.getNombreAsignatura());
             return asignaturaRepository.save(asignaturaExistente);
         } else {
