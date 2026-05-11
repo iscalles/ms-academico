@@ -2,7 +2,6 @@ package ms_academico.academicoservice.model;
 
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.*;
 
 @Entity
 public class CursoAsignatura {
@@ -23,15 +22,15 @@ public class CursoAsignatura {
     @JoinColumn(name = "ID_EVALUACION", nullable = false)
     private Evaluacion idEvaluacion;
 
-    @Column(name = "DOCENTE_USUARIO_RUT_DOCENTE", nullable = false, length = 12)
-    private String docenteUsuarioRutDocente;
+    @Column(name = "DOCENTE_ID_USUARIO", nullable = false)
+    private Long docenteIdUsuario;
 
-    public String getDocenteUsuarioRutDocente() {
-        return docenteUsuarioRutDocente;
+    public Long getDocenteIdUsuario() {
+        return docenteIdUsuario;
     }
 
-    public void setDocenteUsuarioRutDocente(String docenteUsuarioRutDocente) {
-        this.docenteUsuarioRutDocente = docenteUsuarioRutDocente;
+    public void setDocenteIdUsuario(Long docenteIdUsuario) {
+        this.docenteIdUsuario = docenteIdUsuario;
     }
 
     public Evaluacion getIdEvaluacion() {

@@ -47,9 +47,9 @@ public class CalificacionServiceImpl implements CalificacionService {
             calificacionExistente.setNotaCalificacion(calificacion.getNotaCalificacion());
             calificacionExistente.setMatriculaIdMatricula(calificacion.getMatriculaIdMatricula());
             calificacionExistente.setEvaluacionIdEvaluacion(calificacion.getEvaluacionIdEvaluacion());
-            calificacionExistente.setCreadoPorRut(calificacion.getCreadoPorRut());
+            calificacionExistente.setCreadoPorIdUsuario(calificacion.getCreadoPorIdUsuario());
             calificacionExistente.setUltimaModificacion(calificacion.getUltimaModificacion());
-            calificacionExistente.setModificadoPorRut(calificacion.getModificadoPorRut());
+            calificacionExistente.setModificadoPorIdUsuario(calificacion.getModificadoPorIdUsuario());
             return calificacionRepository.save(calificacionExistente);
         } else {
             throw new RuntimeException("Calificacion no encontrada con id: " + id);

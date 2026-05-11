@@ -2,8 +2,6 @@ package ms_academico.academicoservice.model;
 
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Matricula {
@@ -19,26 +17,26 @@ public class Matricula {
     @JoinColumn(name = "CURSO_ID_CURSO")
     private Curso cursoIdCurso;
 
-    @Column(name = "ESTUDIANTE_USUARIO_RUT_USUARIO", length = 12)
-    private String estudianteUsuarioRutUsuario;
+    @Column(name = "ESTUDIANTE_ID_USUARIO", nullable = false)
+    private Long estudianteIdUsuario;
 
     public Matricula() {
 
     }
 
-    public Matricula(Long id, Long anioAcademicoMatricula, Curso cursoIdCurso, String estudianteUsuarioRutUsuario) {
+    public Matricula(Long id, Long anioAcademicoMatricula, Curso cursoIdCurso, Long estudianteIdUsuario) {
         this.id_matricula = id;
         this.anioAcademicoMatricula = anioAcademicoMatricula;
         this.cursoIdCurso = cursoIdCurso;
-        this.estudianteUsuarioRutUsuario = estudianteUsuarioRutUsuario;
+        this.estudianteIdUsuario = estudianteIdUsuario;
     }
 
-    public String getEstudianteUsuarioRutUsuario() {
-        return estudianteUsuarioRutUsuario;
+    public Long getEstudianteIdUsuario() {
+        return estudianteIdUsuario;
     }
 
-    public void setEstudianteUsuarioRutUsuario(String estudianteUsuarioRutUsuario) {
-        this.estudianteUsuarioRutUsuario = estudianteUsuarioRutUsuario;
+    public void setEstudianteIdUsuario(Long estudianteIdUsuario) {
+        this.estudianteIdUsuario = estudianteIdUsuario;
     }
 
     public Curso getCursoIdCurso() {

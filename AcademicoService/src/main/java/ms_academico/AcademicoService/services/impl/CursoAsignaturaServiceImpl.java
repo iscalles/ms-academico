@@ -38,7 +38,7 @@ public class CursoAsignaturaServiceImpl implements CursoAsignaturaService {
             cursoAsignaturaExistente.setIdAsignatura (cursoAsignatura.getIdAsignatura());
             cursoAsignaturaExistente.setIdCurso(cursoAsignatura.getIdCurso());
             cursoAsignaturaExistente.setIdEvaluacion(cursoAsignatura.getIdEvaluacion());
-            cursoAsignaturaExistente.setDocenteUsuarioRutDocente(cursoAsignatura.getDocenteUsuarioRutDocente());
+            cursoAsignaturaExistente.setDocenteIdUsuario(cursoAsignatura.getDocenteIdUsuario());
             return cursoAsignaturaRepository.save(cursoAsignaturaExistente);
         } else {
             throw new RuntimeException("CursoAsignatura no encontrada con id: " + id);

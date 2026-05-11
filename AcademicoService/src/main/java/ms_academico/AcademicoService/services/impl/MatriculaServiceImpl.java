@@ -37,7 +37,7 @@ public class MatriculaServiceImpl implements MatriculaService {
         if (matriculaExistente != null) {
             matriculaExistente.setAnioAcademicoMatricula(matricula.getAnioAcademicoMatricula());
             matriculaExistente.setCursoIdCurso(matricula.getCursoIdCurso());
-            matriculaExistente.setEstudianteUsuarioRutUsuario(matricula.getEstudianteUsuarioRutUsuario());
+            matriculaExistente.setEstudianteIdUsuario(matricula.getEstudianteIdUsuario());
             return matriculaRepository.save(matriculaExistente);
         } else {
             throw new RuntimeException("Matricula no encontrada con id: " + id);

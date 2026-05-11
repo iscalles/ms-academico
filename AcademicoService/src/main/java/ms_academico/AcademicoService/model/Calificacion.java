@@ -1,12 +1,8 @@
 package ms_academico.academicoservice.model;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-
-
 import java.time.LocalDateTime;
-
 
 @Entity
 public class Calificacion {
@@ -30,37 +26,37 @@ public class Calificacion {
     @Column(name = "FECHA_REGISTRO")
     private LocalDateTime fechaRegistro;
 
-    @Column(name = "CREADO_POR_RUT", nullable = false, length = 12)
-    private String creadoPorRut;
+    @Column(name = "CREADO_POR_ID_USUARIO", nullable = false)
+    private Long creadoPorIdUsuario;
 
     @JsonFormat(pattern="dd-MM-yyyy HH:mm",timezone = "America/Santiago")
     @Column(name = "ULTIMA_MODIFICACION")
     private LocalDateTime ultimaModificacion;
 
-    @Column(name = "MODIFICADO_POR_RUT", length = 12)
-    private String modificadoPorRut;
+    @Column(name = "MODIFICADO_POR_ID_USUARIO")
+    private Long modificadoPorIdUsuario;
     
     public Calificacion() {
         
     }
 
-    public Calificacion(Long id_calificacion, Double notaCalificacion, Matricula matriculaIdMatricula, Evaluacion evaluacionIdEvaluacion, LocalDateTime fechaRegistro, String creadoPorRut, LocalDateTime ultimaModificacion, String modificadoPorRut) {
+    public Calificacion(Long id_calificacion, Double notaCalificacion, Matricula matriculaIdMatricula, Evaluacion evaluacionIdEvaluacion, LocalDateTime fechaRegistro, Long creadoPorIdUsuario, LocalDateTime ultimaModificacion, Long modificadoPorIdUsuario) {
         this.id_calificacion = id_calificacion;
         this.notaCalificacion = notaCalificacion;
         this.matriculaIdMatricula = matriculaIdMatricula;
         this.evaluacionIdEvaluacion = evaluacionIdEvaluacion;
         this.fechaRegistro = fechaRegistro;
-        this.creadoPorRut = creadoPorRut;
+        this.creadoPorIdUsuario = creadoPorIdUsuario;
         this.ultimaModificacion = ultimaModificacion;
-        this.modificadoPorRut = modificadoPorRut;
+        this.modificadoPorIdUsuario = modificadoPorIdUsuario;
     }
 
-    public String getModificadoPorRut() {
-        return modificadoPorRut;
+    public Long getModificadoPorIdUsuario() {
+        return modificadoPorIdUsuario;
     }
 
-    public void setModificadoPorRut(String modificadoPorRut) {
-        this.modificadoPorRut = modificadoPorRut;
+    public void setModificadoPorIdUsuario(Long modificadoPorRut) {
+        this.modificadoPorIdUsuario = modificadoPorIdUsuario;
     }
 
     public LocalDateTime getUltimaModificacion() {
@@ -71,12 +67,12 @@ public class Calificacion {
         this.ultimaModificacion = ultimaModificacion;
     }
 
-    public String getCreadoPorRut() {
-        return creadoPorRut;
+    public Long getCreadoPorIdUsuario() {
+        return creadoPorIdUsuario;
     }
 
-    public void setCreadoPorRut(String creadoPorRut) {
-        this.creadoPorRut = creadoPorRut;
+    public void setCreadoPorIdUsuario(Long creadoPorIdUsuario) {
+        this.creadoPorIdUsuario = creadoPorIdUsuario;
     }
 
     public LocalDateTime getFechaRegistro() {
