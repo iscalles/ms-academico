@@ -1,7 +1,10 @@
 package ms_academico.academicoservice.controller;
 
-import ms_academico.academicoservice.model.CursoAsignatura;
+import ms_academico.academicoservice.dto.CursoAsignaturaRequestDTO;
+import ms_academico.academicoservice.dto.CursoAsignaturaResponseDTO;
 import ms_academico.academicoservice.services.CursoAsignaturaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,34 +12,37 @@ import java.util.List;
 @RestController
 @RequestMapping("/curso-asignatura")
 public class CursoAsignaturaController {
+
     private final CursoAsignaturaService service;
 
     public CursoAsignaturaController(CursoAsignaturaService service) {
         this.service = service;
     }
 
-    @GetMapping()
-    List<CursoAsignatura> listarCursoAsignaturas() {
-        return service.listarCursoAsignatura();
+    @GetMapping
+    public ResponseEntity<List<CursoAsignaturaResponseDTO>> listarCursoAsignaturas() {
+        return ResponseEntity.ok(service.listarCursoAsignatura());
     }
 
     @GetMapping("/{id}")
-    CursoAsignatura buscarCursoAsignaturaPorId(@PathVariable Long id) {
-        return service.buscarCursoAsignaturaPorId(id);
+    public ResponseEntity<CursoAsignaturaResponseDTO> buscarCursoAsignaturaPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarCursoAsignaturaPorId(id));
     }
 
-    @PostMapping()
-    CursoAsignatura crearCursoAsignatura(@RequestBody CursoAsignatura cursoAsignatura) {
-        return service.crearCursoAsignatura(cursoAsignatura);
+    @PostMapping
+    public ResponseEntity<CursoAsignaturaResponseDTO> crearCursoAsignatura(@RequestBody CursoAsignaturaRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.crearCursoAsignatura(dto));
     }
 
     @PutMapping("/{id}")
-    CursoAsignatura actualizarCursoAsignatura(@PathVariable Long id, @RequestBody CursoAsignatura cursoAsignatura) {
-        return service.actualizarCursoAsignatura(cursoAsignatura, id);
+    public ResponseEntity<CursoAsignaturaResponseDTO> actualizarCursoAsignatura(@PathVariable Long id,
+                                                                                @RequestBody CursoAsignaturaRequestDTO dto) {
+        return ResponseEntity.ok(service.actualizarCursoAsignatura(dto, id));
     }
 
     @DeleteMapping("/{id}")
-    void eliminarCursoAsignatura(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarCursoAsignatura(@PathVariable Long id) {
         service.eliminarCursoAsignatura(id);
+        return ResponseEntity.noContent().build();
     }
 }
