@@ -8,6 +8,7 @@ public class CursoAsignaturaResponseDTO {
 
     private Long idCursoAsignatura;
     private Long docenteIdUsuario;
+    private String nombreDocente;
 
     private Long idCurso;
     private String gradoCurso;
@@ -39,6 +40,14 @@ public class CursoAsignaturaResponseDTO {
 
     public void setDocenteIdUsuario(Long docenteIdUsuario) {
         this.docenteIdUsuario = docenteIdUsuario;
+    }
+
+    public String getNombreDocente() {
+        return nombreDocente;
+    }
+
+    public void setNombreDocente(String nombreDocente) {
+        this.nombreDocente = nombreDocente;
     }
 
     public Long getIdCurso() {
