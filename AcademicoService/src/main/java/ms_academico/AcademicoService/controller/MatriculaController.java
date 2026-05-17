@@ -1,8 +1,10 @@
 package ms_academico.academicoservice.controller;
 
-
-import ms_academico.academicoservice.model.Matricula;
+import ms_academico.academicoservice.dto.MatriculaRequestDTO;
+import ms_academico.academicoservice.dto.MatriculaResponseDTO;
 import ms_academico.academicoservice.services.MatriculaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,34 +12,37 @@ import java.util.List;
 @RestController
 @RequestMapping("/matriculas")
 public class MatriculaController {
+
     private final MatriculaService service;
 
-    public MatriculaController(MatriculaService service){
+    public MatriculaController(MatriculaService service) {
         this.service = service;
     }
 
-    @GetMapping()
-    public List<Matricula> listarMatriculas() {
-        return service.listarMatriculas();
+    @GetMapping
+    public ResponseEntity<List<MatriculaResponseDTO>> listarMatriculas() {
+        return ResponseEntity.ok(service.listarMatriculas());
     }
 
     @GetMapping("/{id}")
-    public Matricula buscarMatriculaPorId(Long id) {
-        return service.buscarMatriculaPorId(id);
+    public ResponseEntity<MatriculaResponseDTO> buscarMatriculaPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarMatriculaPorId(id));
     }
 
     @PostMapping
-    public Matricula crearMatricula(@RequestBody Matricula matricula) {
-        return service.crearMatricula(matricula);
+    public ResponseEntity<MatriculaResponseDTO> crearMatricula(@RequestBody MatriculaRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.crearMatricula(dto));
     }
 
     @PutMapping("/{id}")
-    public Matricula actualizarMatricula(@PathVariable Long id, @RequestBody Matricula matricula) {
-        return service.actualizarMatricula(matricula, id);
+    public ResponseEntity<MatriculaResponseDTO> actualizarMatricula(@PathVariable Long id,
+                                                                    @RequestBody MatriculaRequestDTO dto) {
+        return ResponseEntity.ok(service.actualizarMatricula(dto, id));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarMatricula(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarMatricula(@PathVariable Long id) {
         service.eliminarMatricula(id);
+        return ResponseEntity.noContent().build();
     }
 }

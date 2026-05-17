@@ -55,7 +55,7 @@ public class Calificacion {
         return modificadoPorIdUsuario;
     }
 
-    public void setModificadoPorIdUsuario(Long modificadoPorRut) {
+    public void setModificadoPorIdUsuario(Long modificadoPorIdUsuario) {
         this.modificadoPorIdUsuario = modificadoPorIdUsuario;
     }
 
