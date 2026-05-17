@@ -6,6 +6,8 @@ public class MatriculaResponseDTO {
     private Long anioAcademicoMatricula;
     private Long estudianteIdUsuario;
 
+    private String nombreEstudiante;
+
     private Long idCurso;
     private String gradoCurso;
     private String seccionCurso;
@@ -35,6 +37,14 @@ public class MatriculaResponseDTO {
 
     public void setEstudianteIdUsuario(Long estudianteIdUsuario) {
         this.estudianteIdUsuario = estudianteIdUsuario;
+    }
+
+    public String getNombreEstudiante() {
+        return nombreEstudiante;
+    }
+
+    public void setNombreEstudiante(String nombreEstudiante) {
+        this.nombreEstudiante = nombreEstudiante;
     }
 
     public Long getIdCurso() {

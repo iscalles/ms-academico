@@ -1,5 +1,7 @@
 package ms_academico.academicoservice.services.impl;
 
+import ms_academico.academicoservice.client.UsuarioClient;
+import ms_academico.academicoservice.client.UsuarioDTOInternal;
 import ms_academico.academicoservice.dto.CursoAsignaturaRequestDTO;
 import ms_academico.academicoservice.dto.CursoAsignaturaResponseDTO;
 import ms_academico.academicoservice.model.Asignatura;
@@ -23,22 +25,33 @@ public class CursoAsignaturaServiceImpl implements CursoAsignaturaService {
     private final CursoRepository cursoRepository;
     private final AsignaturaRepository asignaturaRepository;
     private final EvaluacionRepository evaluacionRepository;
+    private final UsuarioClient usuarioClient;
 
     public CursoAsignaturaServiceImpl(CursoAsignaturaRepository cursoAsignaturaRepository,
                                       CursoRepository cursoRepository,
                                       AsignaturaRepository asignaturaRepository,
-                                      EvaluacionRepository evaluacionRepository) {
+                                      EvaluacionRepository evaluacionRepository,
+                                      UsuarioClient usuarioClient) {
         this.cursoAsignaturaRepository = cursoAsignaturaRepository;
         this.cursoRepository = cursoRepository;
         this.asignaturaRepository = asignaturaRepository;
         this.evaluacionRepository = evaluacionRepository;
+        this.usuarioClient = usuarioClient;
     }
 
-    // Entidad → DTO de salida: aplana Curso, Asignatura y Evaluacion
+    // Entidad → DTO de salida: aplana Curso, Asignatura, Evaluacion y enriquece con nombre del docente
     private CursoAsignaturaResponseDTO toResponseDTO(CursoAsignatura ca) {
         CursoAsignaturaResponseDTO dto = new CursoAsignaturaResponseDTO();
         dto.setIdCursoAsignatura(ca.getId());
         dto.setDocenteIdUsuario(ca.getDocenteIdUsuario());
+
+        // Enriquece con el nombre del docente consultando ms-usuario
+        try {
+            UsuarioDTOInternal docente = usuarioClient.obtenerUsuarioPorId(ca.getDocenteIdUsuario());
+            dto.setNombreDocente(docente.getNombreCompleto());
+        } catch (Exception e) {
+            dto.setNombreDocente("Usuario no disponible");
+        }
 
         if (ca.getIdCurso() != null) {
             dto.setIdCurso(ca.getIdCurso().getId());
@@ -61,8 +74,11 @@ public class CursoAsignaturaServiceImpl implements CursoAsignaturaService {
         return dto;
     }
 
-    // DTO de entrada → Entidad: busca los 3 objetos relacionados en BD
+    // DTO de entrada → Entidad: valida el docente en ms-usuario y busca los 3 objetos en BD
     private CursoAsignatura toEntity(CursoAsignaturaRequestDTO dto) {
+        // Valida que el docente existe en ms-usuario antes de guardar
+        usuarioClient.obtenerUsuarioPorId(dto.getDocenteIdUsuario());
+
         Curso curso = cursoRepository.findById(dto.getIdCurso())
                 .orElseThrow(() -> new RuntimeException("Curso no encontrado con id: " + dto.getIdCurso()));
 
@@ -104,6 +120,9 @@ public class CursoAsignaturaServiceImpl implements CursoAsignaturaService {
     public CursoAsignaturaResponseDTO actualizarCursoAsignatura(CursoAsignaturaRequestDTO dto, Long id) {
         CursoAsignatura existente = cursoAsignaturaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("CursoAsignatura no encontrada con id: " + id));
+
+        // Valida que el nuevo docente existe en ms-usuario
+        usuarioClient.obtenerUsuarioPorId(dto.getDocenteIdUsuario());
 
         Curso curso = cursoRepository.findById(dto.getIdCurso())
                 .orElseThrow(() -> new RuntimeException("Curso no encontrado con id: " + dto.getIdCurso()));

@@ -1,5 +1,7 @@
 package ms_academico.academicoservice.services.impl;
 
+import ms_academico.academicoservice.client.UsuarioClient;
+import ms_academico.academicoservice.client.UsuarioDTOInternal;
 import ms_academico.academicoservice.dto.MatriculaRequestDTO;
 import ms_academico.academicoservice.dto.MatriculaResponseDTO;
 import ms_academico.academicoservice.model.Curso;
@@ -17,19 +19,29 @@ public class MatriculaServiceImpl implements MatriculaService {
 
     private final MatriculaRepository matriculaRepository;
     private final CursoRepository cursoRepository;
+    private final UsuarioClient usuarioClient;
 
     public MatriculaServiceImpl(MatriculaRepository matriculaRepository,
-                                CursoRepository cursoRepository) {
+                                CursoRepository cursoRepository,
+                                UsuarioClient usuarioClient) {
         this.matriculaRepository = matriculaRepository;
         this.cursoRepository = cursoRepository;
+        this.usuarioClient = usuarioClient;
     }
 
-    // Entidad → DTO de salida: aplana los datos del Curso
     private MatriculaResponseDTO toResponseDTO(Matricula m) {
         MatriculaResponseDTO dto = new MatriculaResponseDTO();
         dto.setIdMatricula(m.getId());
         dto.setAnioAcademicoMatricula(m.getAnioAcademicoMatricula());
         dto.setEstudianteIdUsuario(m.getEstudianteIdUsuario());
+
+        // Enriquece con el nombre del estudiante consultando ms-usuario
+        try {
+            UsuarioDTOInternal usuario = usuarioClient.obtenerUsuarioPorId(m.getEstudianteIdUsuario());
+            dto.setNombreEstudiante(usuario.getNombreCompleto());
+        } catch (Exception e) {
+            dto.setNombreEstudiante("Usuario no disponible");
+        }
 
         if (m.getCursoIdCurso() != null) {
             dto.setIdCurso(m.getCursoIdCurso().getId());
@@ -41,8 +53,10 @@ public class MatriculaServiceImpl implements MatriculaService {
         return dto;
     }
 
-    // DTO de entrada → Entidad: busca el Curso en BD y construye la Matricula
     private Matricula toEntity(MatriculaRequestDTO dto) {
+        // Valida que el estudiante existe en ms-usuario antes de guardar
+        usuarioClient.obtenerUsuarioPorId(dto.getEstudianteIdUsuario());
+
         Curso curso = cursoRepository.findById(dto.getIdCurso())
                 .orElseThrow(() -> new RuntimeException("Curso no encontrado con id: " + dto.getIdCurso()));
 
@@ -69,14 +83,16 @@ public class MatriculaServiceImpl implements MatriculaService {
 
     @Override
     public MatriculaResponseDTO crearMatricula(MatriculaRequestDTO dto) {
-        Matricula matricula = toEntity(dto);
-        return toResponseDTO(matriculaRepository.save(matricula));
+        return toResponseDTO(matriculaRepository.save(toEntity(dto)));
     }
 
     @Override
     public MatriculaResponseDTO actualizarMatricula(MatriculaRequestDTO dto, Long id) {
         Matricula existente = matriculaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Matricula no encontrada con id: " + id));
+
+        // Valida que el nuevo estudiante existe en ms-usuario
+        usuarioClient.obtenerUsuarioPorId(dto.getEstudianteIdUsuario());
 
         Curso curso = cursoRepository.findById(dto.getIdCurso())
                 .orElseThrow(() -> new RuntimeException("Curso no encontrado con id: " + dto.getIdCurso()));

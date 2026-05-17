@@ -1,5 +1,6 @@
 package ms_academico.academicoservice.services.impl;
 
+import ms_academico.academicoservice.client.UsuarioClient;
 import ms_academico.academicoservice.dto.CalificacionRequestDTO;
 import ms_academico.academicoservice.dto.CalificacionResponseDTO;
 import ms_academico.academicoservice.model.Calificacion;
@@ -21,13 +22,16 @@ public class CalificacionServiceImpl implements CalificacionService {
     private final CalificacionRepository calificacionRepository;
     private final MatriculaRepository matriculaRepository;
     private final EvaluacionRepository evaluacionRepository;
+    private final UsuarioClient usuarioClient;
 
     public CalificacionServiceImpl(CalificacionRepository calificacionRepository,
                                    MatriculaRepository matriculaRepository,
-                                   EvaluacionRepository evaluacionRepository) {
+                                   EvaluacionRepository evaluacionRepository,
+                                   UsuarioClient usuarioClient) {
         this.calificacionRepository = calificacionRepository;
         this.matriculaRepository = matriculaRepository;
         this.evaluacionRepository = evaluacionRepository;
+        this.usuarioClient = usuarioClient;
     }
 
     private CalificacionResponseDTO toResponseDTO(Calificacion c) {
@@ -54,6 +58,9 @@ public class CalificacionServiceImpl implements CalificacionService {
     }
 
     private Calificacion toEntity(CalificacionRequestDTO dto) {
+        // Valida que el usuario que registra la nota existe en ms-usuario
+        usuarioClient.obtenerUsuarioPorId(dto.getCreadoPorIdUsuario());
+
         Matricula matricula = matriculaRepository.findById(dto.getIdMatricula())
                 .orElseThrow(() -> new RuntimeException("Matricula no encontrada con id: " + dto.getIdMatricula()));
 
