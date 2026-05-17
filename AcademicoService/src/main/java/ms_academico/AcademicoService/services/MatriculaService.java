@@ -1,13 +1,14 @@
 package ms_academico.academicoservice.services;
 
-import ms_academico.academicoservice.model.Matricula;
+import ms_academico.academicoservice.dto.MatriculaRequestDTO;
+import ms_academico.academicoservice.dto.MatriculaResponseDTO;
 
 import java.util.List;
 
 public interface MatriculaService {
-    List<Matricula> listarMatriculas();
-    Matricula buscarMatriculaPorId(Long id);
-    Matricula crearMatricula(Matricula matricula);
-    Matricula actualizarMatricula(Matricula matricula, Long id);
+    List<MatriculaResponseDTO> listarMatriculas();
+    MatriculaResponseDTO buscarMatriculaPorId(Long id);
+    MatriculaResponseDTO crearMatricula(MatriculaRequestDTO dto);
+    MatriculaResponseDTO actualizarMatricula(MatriculaRequestDTO dto, Long id);
     void eliminarMatricula(Long id);
 }
