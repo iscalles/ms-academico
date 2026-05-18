@@ -18,10 +18,6 @@ public class CursoAsignatura {
     @JoinColumn(name = "ID_ASIGNATURA", nullable = false)
     private Asignatura idAsignatura;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ID_EVALUACION", nullable = false)
-    private Evaluacion idEvaluacion;
-
     @Column(name = "DOCENTE_ID_USUARIO", nullable = false)
     private Long docenteIdUsuario;
 
@@ -31,14 +27,6 @@ public class CursoAsignatura {
 
     public void setDocenteIdUsuario(Long docenteIdUsuario) {
         this.docenteIdUsuario = docenteIdUsuario;
-    }
-
-    public Evaluacion getIdEvaluacion() {
-        return idEvaluacion;
-    }
-
-    public void setIdEvaluacion(Evaluacion idEvaluacion) {
-        this.idEvaluacion = idEvaluacion;
     }
 
     public Asignatura getIdAsignatura() {

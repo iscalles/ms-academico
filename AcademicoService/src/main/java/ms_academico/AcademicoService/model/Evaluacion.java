@@ -20,6 +20,10 @@ public class Evaluacion {
     @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate fechaEvaluacion;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_CURSO_ASIGNATURA", nullable = false)
+    private CursoAsignatura cursoAsignatura;
+
     public Evaluacion() {
 
     }
@@ -53,5 +57,12 @@ public class Evaluacion {
     public void setFechaEvaluacion(LocalDate fechaEvaluacion) {
         this.fechaEvaluacion = fechaEvaluacion;
     }
-}
 
+    public CursoAsignatura getCursoAsignatura() {
+        return cursoAsignatura;
+    }
+
+    public void setCursoAsignatura(CursoAsignatura cursoAsignatura) {
+        this.cursoAsignatura = cursoAsignatura;
+    }
+}

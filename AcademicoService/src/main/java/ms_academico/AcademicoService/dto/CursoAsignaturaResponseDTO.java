@@ -1,9 +1,5 @@
 package ms_academico.academicoservice.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import java.time.LocalDate;
-
 public class CursoAsignaturaResponseDTO {
 
     private Long idCursoAsignatura;
@@ -17,12 +13,6 @@ public class CursoAsignaturaResponseDTO {
 
     private Long idAsignatura;
     private String nombreAsignatura;
-
-    private Long idEvaluacion;
-    private String nombreEvaluacion;
-
-    @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate fechaEvaluacion;
 
     public CursoAsignaturaResponseDTO() {}
 
@@ -96,29 +86,5 @@ public class CursoAsignaturaResponseDTO {
 
     public void setNombreAsignatura(String nombreAsignatura) {
         this.nombreAsignatura = nombreAsignatura;
-    }
-
-    public Long getIdEvaluacion() {
-        return idEvaluacion;
-    }
-
-    public void setIdEvaluacion(Long idEvaluacion) {
-        this.idEvaluacion = idEvaluacion;
-    }
-
-    public String getNombreEvaluacion() {
-        return nombreEvaluacion;
-    }
-
-    public void setNombreEvaluacion(String nombreEvaluacion) {
-        this.nombreEvaluacion = nombreEvaluacion;
-    }
-
-    public LocalDate getFechaEvaluacion() {
-        return fechaEvaluacion;
-    }
-
-    public void setFechaEvaluacion(LocalDate fechaEvaluacion) {
-        this.fechaEvaluacion = fechaEvaluacion;
     }
 }
