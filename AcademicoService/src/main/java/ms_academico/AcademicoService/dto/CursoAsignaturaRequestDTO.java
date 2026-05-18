@@ -4,7 +4,6 @@ public class CursoAsignaturaRequestDTO {
 
     private Long idCurso;
     private Long idAsignatura;
-    private Long idEvaluacion;
     private Long docenteIdUsuario;
 
     public CursoAsignaturaRequestDTO() {}
@@ -23,14 +22,6 @@ public class CursoAsignaturaRequestDTO {
 
     public void setIdAsignatura(Long idAsignatura) {
         this.idAsignatura = idAsignatura;
-    }
-
-    public Long getIdEvaluacion() {
-        return idEvaluacion;
-    }
-
-    public void setIdEvaluacion(Long idEvaluacion) {
-        this.idEvaluacion = idEvaluacion;
     }
 
     public Long getDocenteIdUsuario() {

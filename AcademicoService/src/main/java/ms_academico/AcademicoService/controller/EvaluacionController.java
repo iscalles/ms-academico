@@ -1,8 +1,10 @@
 package ms_academico.academicoservice.controller;
 
-
-import ms_academico.academicoservice.model.Evaluacion;
+import ms_academico.academicoservice.dto.EvaluacionRequestDTO;
+import ms_academico.academicoservice.dto.EvaluacionResponseDTO;
 import ms_academico.academicoservice.services.EvaluacionService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/evaluaciones")
 public class EvaluacionController {
+
     private final EvaluacionService service;
 
     public EvaluacionController(EvaluacionService service) {
@@ -17,28 +20,29 @@ public class EvaluacionController {
     }
 
     @GetMapping
-    public List<Evaluacion> listarEvaluaciones() {
-        return service.listarEvaluacion();
+    public ResponseEntity<List<EvaluacionResponseDTO>> listarEvaluaciones() {
+        return ResponseEntity.ok(service.listarEvaluacion());
     }
 
     @GetMapping("/{id}")
-    public Evaluacion buscarEvaluacionPorId(@PathVariable Long id) {
-        return service.buscarEvaluacionPorId(id);
+    public ResponseEntity<EvaluacionResponseDTO> buscarEvaluacionPorId(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarEvaluacionPorId(id));
     }
 
     @PostMapping
-    public Evaluacion crearEvaluacion(@RequestBody Evaluacion evaluacion) {
-        return service.crearEvaluacion(evaluacion);
+    public ResponseEntity<EvaluacionResponseDTO> crearEvaluacion(@RequestBody EvaluacionRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.crearEvaluacion(dto));
     }
 
     @PutMapping("/{id}")
-    public Evaluacion actualizarEvaluacion(@PathVariable Long id, @RequestBody Evaluacion evaluacion) {
-        return service.actualizarEvaluacion(evaluacion, id);
+    public ResponseEntity<EvaluacionResponseDTO> actualizarEvaluacion(@PathVariable Long id,
+                                                                      @RequestBody EvaluacionRequestDTO dto) {
+        return ResponseEntity.ok(service.actualizarEvaluacion(dto, id));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarEvaluacion(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarEvaluacion(@PathVariable Long id) {
         service.eliminarEvaluacion(id);
+        return ResponseEntity.noContent().build();
     }
-
 }

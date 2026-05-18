@@ -1,13 +1,14 @@
 package ms_academico.academicoservice.services;
 
-import ms_academico.academicoservice.model.Evaluacion;
+import ms_academico.academicoservice.dto.EvaluacionRequestDTO;
+import ms_academico.academicoservice.dto.EvaluacionResponseDTO;
 
 import java.util.List;
 
 public interface EvaluacionService {
-    List<Evaluacion> listarEvaluacion();
-    Evaluacion buscarEvaluacionPorId(Long id);
-    Evaluacion crearEvaluacion(Evaluacion evaluacion);
-    Evaluacion actualizarEvaluacion(Evaluacion evaluacion, Long id);
+    List<EvaluacionResponseDTO> listarEvaluacion();
+    EvaluacionResponseDTO buscarEvaluacionPorId(Long id);
+    EvaluacionResponseDTO crearEvaluacion(EvaluacionRequestDTO dto);
+    EvaluacionResponseDTO actualizarEvaluacion(EvaluacionRequestDTO dto, Long id);
     void eliminarEvaluacion(Long id);
 }
