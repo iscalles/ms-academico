@@ -61,7 +61,8 @@ public class MatriculaServiceImpl implements MatriculaService {
                 .orElseThrow(() -> new RuntimeException("Curso no encontrado con id: " + dto.getIdCurso()));
 
         Matricula matricula = new Matricula();
-        matricula.setAnioAcademicoMatricula(dto.getAnioAcademicoMatricula());
+        // El año de la matrícula se deriva del curso, no se recibe del cliente
+        matricula.setAnioAcademicoMatricula(curso.getAnioCurso());
         matricula.setCursoIdCurso(curso);
         matricula.setEstudianteIdUsuario(dto.getEstudianteIdUsuario());
         return matricula;
@@ -97,7 +98,8 @@ public class MatriculaServiceImpl implements MatriculaService {
         Curso curso = cursoRepository.findById(dto.getIdCurso())
                 .orElseThrow(() -> new RuntimeException("Curso no encontrado con id: " + dto.getIdCurso()));
 
-        existente.setAnioAcademicoMatricula(dto.getAnioAcademicoMatricula());
+        // El año de la matrícula se deriva del curso, no se recibe del cliente
+        existente.setAnioAcademicoMatricula(curso.getAnioCurso());
         existente.setCursoIdCurso(curso);
         existente.setEstudianteIdUsuario(dto.getEstudianteIdUsuario());
 

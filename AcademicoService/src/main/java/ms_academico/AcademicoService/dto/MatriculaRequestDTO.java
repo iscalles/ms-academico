@@ -2,19 +2,10 @@ package ms_academico.academicoservice.dto;
 
 public class MatriculaRequestDTO {
 
-    private Long anioAcademicoMatricula;
     private Long idCurso;
     private Long estudianteIdUsuario;
 
     public MatriculaRequestDTO() {}
-
-    public Long getAnioAcademicoMatricula() {
-        return anioAcademicoMatricula;
-    }
-
-    public void setAnioAcademicoMatricula(Long anioAcademicoMatricula) {
-        this.anioAcademicoMatricula = anioAcademicoMatricula;
-    }
 
     public Long getIdCurso() {
         return idCurso;
