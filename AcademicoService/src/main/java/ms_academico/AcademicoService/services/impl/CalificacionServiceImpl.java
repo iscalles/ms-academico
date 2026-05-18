@@ -67,6 +67,8 @@ public class CalificacionServiceImpl implements CalificacionService {
         Evaluacion evaluacion = evaluacionRepository.findById(dto.getIdEvaluacion())
                 .orElseThrow(() -> new RuntimeException("Evaluacion no encontrada con id: " + dto.getIdEvaluacion()));
 
+        validarMismoCurso(matricula, evaluacion);
+
         Calificacion calificacion = new Calificacion();
         calificacion.setNotaCalificacion(dto.getNotaCalificacion());
         calificacion.setMatriculaIdMatricula(matricula);
@@ -74,6 +76,17 @@ public class CalificacionServiceImpl implements CalificacionService {
         calificacion.setCreadoPorIdUsuario(dto.getCreadoPorIdUsuario());
         calificacion.setFechaRegistro(LocalDateTime.now());
         return calificacion;
+    }
+
+    // Verifica que la evaluación y la matrícula pertenezcan al mismo curso.
+    // La evaluación llega a su curso vía CursoAsignatura; la matrícula lo tiene directo.
+    private void validarMismoCurso(Matricula matricula, Evaluacion evaluacion) {
+        Long cursoMatricula  = matricula.getCursoIdCurso().getId();
+        Long cursoEvaluacion = evaluacion.getCursoAsignatura().getIdCurso().getId();
+        if (!cursoMatricula.equals(cursoEvaluacion)) {
+            throw new RuntimeException(
+                "La evaluación pertenece a un curso distinto al de la matrícula del estudiante.");
+        }
     }
 
     @Override
@@ -120,6 +133,8 @@ public class CalificacionServiceImpl implements CalificacionService {
 
         Evaluacion evaluacion = evaluacionRepository.findById(dto.getIdEvaluacion())
                 .orElseThrow(() -> new RuntimeException("Evaluacion no encontrada con id: " + dto.getIdEvaluacion()));
+
+        validarMismoCurso(matricula, evaluacion);
 
         existente.setNotaCalificacion(dto.getNotaCalificacion());
         existente.setMatriculaIdMatricula(matricula);
