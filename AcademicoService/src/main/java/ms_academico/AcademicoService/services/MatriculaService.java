@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface MatriculaService {
     List<MatriculaResponseDTO> listarMatriculas();
+    List<MatriculaResponseDTO> listarMatriculasPorCurso(Long idCurso);
     MatriculaResponseDTO buscarMatriculaPorId(Long id);
     MatriculaResponseDTO crearMatricula(MatriculaRequestDTO dto);
     MatriculaResponseDTO actualizarMatricula(MatriculaRequestDTO dto, Long id);
