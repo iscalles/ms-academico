@@ -1,154 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b481737f-3b70-4e2e-b9f5-e829cedda486" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ms-academico.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/AcademicoServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/AsignaturaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/CursoAsignaturaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/CursoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/EvaluacionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/MatriculaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/model/Asignatura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/model/Curso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/model/CursoAsignatura.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/model/Evaluacion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/model/Matricula.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/AsignaturaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/CursoAsignaturaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/CursoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/EvaluacionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/MatriculaRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/AsignaturaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/CursoAsignaturaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/CursoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/EvaluacionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/MatriculaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/AsignaturaServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/CursoAsignaturaServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/CursoServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/EvaluacionServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/MatriculaServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/test/java/ms_academico/AcademicoService/AcademicoServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/HikariCP-7.0.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/angus-activation-2.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/antlr4-runtime-4.13.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/aspectjweaver-1.9.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/byte-buddy-1.17.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/classmate-1.7.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/commons-logging-1.3.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hibernate-core-7.2.12.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hibernate-models-1.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/istack-commons-runtime-4.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jackson-annotations-2.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jackson-core-3.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jackson-databind-3.1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jakarta.activation-api-2.1.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jakarta.annotation-api-3.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jakarta.inject-api-2.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jakarta.persistence-api-3.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jakarta.transaction-api-2.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jakarta.xml.bind-api-4.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jaxb-core-4.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jaxb-runtime-4.0.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jboss-logging-3.6.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jspecify-1.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/jul-to-slf4j-2.0.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/log4j-api-2.25.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/log4j-to-slf4j-2.25.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback-classic-1.5.32.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logback-core-1.5.32.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/micrometer-commons-1.16.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/micrometer-observation-1.16.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/slf4j-api-2.0.17.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/snakeyaml-2.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-aop-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-aspects-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-beans-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-autoconfigure-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-data-commons-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-data-jpa-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-hibernate-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-http-converter-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-jackson-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-jdbc-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-jpa-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-persistence-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-servlet-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-sql-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-data-jpa-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-jackson-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-jdbc-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-logging-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-tomcat-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-tomcat-runtime-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-starter-web-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-tomcat-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-transaction-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-web-server-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-boot-webmvc-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-context-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-core-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-commons-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-data-jpa-4.1.0-RC1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-expression-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-jdbc-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-orm-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-tx-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-web-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/spring-webmvc-7.0.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tomcat-embed-core-11.0.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tomcat-embed-el-11.0.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tomcat-embed-websocket-11.0.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/txw2-4.0.6.jar" beforeDir="false" />
+    <list default="true" id="b481737f-3b70-4e2e-b9f5-e829cedda486" name="Changes" comment="se actualiza README.md">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/MatriculaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/MatriculaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/MatriculaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/MatriculaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/MatriculaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/MatriculaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/MatriculaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/MatriculaServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="262bd48b-4732-41db-81f9-ba751a3bd242" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="88e13ac4-d33b-4581-8ba8-51cf8a51d921" />
+            <option name="modeId" value="Ask" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="262bd48b-4732-41db-81f9-ba751a3bd242" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
+      <entry key="_C:/Users/Herimar/IdeaProjects/ms-academico" value="3FKTEMtpLqGjtuXhrQ34JFWQhfz" />
       <entry key="_D:/Asus de Marcos/Documents/CursoJavaUdemy/ms-academico" value="3D39XKncb9wxh5otwflsKeYR4c7" />
     </persistenceIdMap>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "MarcosdelCanto"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarcosdelCanto&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/iscalles/ms-academico.git",
-    "accountId": "ed5cd157-8467-4eee-9048-21bce132400b"
+    "accountId": "f92ab440-0cd9-40a1-a5e4-86fcbdf0f9b5"
   }
 }]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3D39XKncb9wxh5otwflsKeYR4c7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -156,16 +90,48 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AcademicoServiceApplication.executor": "Run",
+    "Maven.academicoService [clean,compile].executor": "Run",
+    "Maven.academicoService [clean,install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AcademicoServiceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "feature/libro-asistencia",
+    "git.auto.fetch.suggestion.counter": "3",
     "kotlin-language-version-configured": "true",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+      <command value="mvn clean compile" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="AcademicoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="academicoService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ms_academico.academicoservice.AcademicoServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -182,11 +148,25 @@
       <option name="presentableId" value="Default" />
       <updated>1777499925101</updated>
       <workItem from="1777499926429" duration="39000" />
+      <workItem from="1781822659537" duration="11980000" />
     </task>
+    <task id="LOCAL-00001" summary="se actualiza README.md">
+      <option name="closed" value="true" />
+      <created>1779085243498</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779085243498</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="se actualiza README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="se actualiza README.md" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

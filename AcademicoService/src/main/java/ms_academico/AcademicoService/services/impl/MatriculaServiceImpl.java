@@ -76,6 +76,13 @@ public class MatriculaServiceImpl implements MatriculaService {
     }
 
     @Override
+    public List<MatriculaResponseDTO> listarMatriculasPorCurso(Long idCurso) {
+        return matriculaRepository.findAllByCursoIdCurso_Id(idCurso).stream()
+                .map(this::toResponseDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public MatriculaResponseDTO buscarMatriculaPorId(Long id) {
         Matricula matricula = matriculaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Matricula no encontrada con id: " + id));
