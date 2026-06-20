@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b481737f-3b70-4e2e-b9f5-e829cedda486" name="Changes" comment="se actualiza README.md">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b481737f-3b70-4e2e-b9f5-e829cedda486" name="Changes" comment="feat: añadir método para listar matrículas por curso y configurar archivos de proyecto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/MatriculaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/MatriculaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/MatriculaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/MatriculaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/MatriculaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/MatriculaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/CalificacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/CalificacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/EvaluacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/controller/EvaluacionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/dto/MatriculaResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/dto/MatriculaResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/CalificacionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/CalificacionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/EvaluacionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/repository/EvaluacionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/CalificacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/CalificacionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/EvaluacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/EvaluacionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/CalificacionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/CalificacionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/EvaluacionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/EvaluacionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/MatriculaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/AcademicoService/src/main/java/ms_academico/AcademicoService/services/impl/MatriculaServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +150,7 @@
       <option name="presentableId" value="Default" />
       <updated>1777499925101</updated>
       <workItem from="1777499926429" duration="39000" />
-      <workItem from="1781822659537" duration="11980000" />
+      <workItem from="1781822659537" duration="16020000" />
     </task>
     <task id="LOCAL-00001" summary="se actualiza README.md">
       <option name="closed" value="true" />
@@ -158,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779085243498</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: añadir método para listar matrículas por curso y configurar archivos de proyecto">
+      <option name="closed" value="true" />
+      <created>1781841171768</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1781841171768</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +176,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="se actualiza README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="se actualiza README.md" />
+    <MESSAGE value="feat: añadir método para listar matrículas por curso y configurar archivos de proyecto" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: añadir método para listar matrículas por curso y configurar archivos de proyecto" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
