@@ -52,6 +52,12 @@ public class CalificacionServiceImpl implements CalificacionService {
             dto.setIdEvaluacion(c.getEvaluacionIdEvaluacion().getId_evaluacion());
             dto.setNombreEvaluacion(c.getEvaluacionIdEvaluacion().getNombreEvaluacion());
             dto.setFechaEvaluacion(c.getEvaluacionIdEvaluacion().getFechaEvaluacion());
+            if (c.getEvaluacionIdEvaluacion().getCursoAsignatura() != null &&
+                c.getEvaluacionIdEvaluacion().getCursoAsignatura().getIdAsignatura() != null) {
+                dto.setNombreAsignatura(
+                    c.getEvaluacionIdEvaluacion().getCursoAsignatura().getIdAsignatura().getNombreAsignatura()
+                );
+            }
         }
 
         return dto;
