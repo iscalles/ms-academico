@@ -58,11 +58,20 @@ public class CalificacionServiceImpl implements CalificacionService {
             dto.setIdEvaluacion(c.getEvaluacionIdEvaluacion().getId_evaluacion());
             dto.setNombreEvaluacion(c.getEvaluacionIdEvaluacion().getNombreEvaluacion());
             dto.setFechaEvaluacion(c.getEvaluacionIdEvaluacion().getFechaEvaluacion());
-            if (c.getEvaluacionIdEvaluacion().getCursoAsignatura() != null &&
-                c.getEvaluacionIdEvaluacion().getCursoAsignatura().getIdAsignatura() != null) {
-                dto.setNombreAsignatura(
-                    c.getEvaluacionIdEvaluacion().getCursoAsignatura().getIdAsignatura().getNombreAsignatura()
-                );
+            if (c.getEvaluacionIdEvaluacion().getCursoAsignatura() != null) {
+                if (c.getEvaluacionIdEvaluacion().getCursoAsignatura().getIdAsignatura() != null) {
+                    dto.setNombreAsignatura(
+                        c.getEvaluacionIdEvaluacion().getCursoAsignatura().getIdAsignatura().getNombreAsignatura()
+                    );
+                }
+                Long docenteIdUsuario = c.getEvaluacionIdEvaluacion().getCursoAsignatura().getDocenteIdUsuario();
+                if (docenteIdUsuario != null) {
+                    try {
+                        dto.setNombreDocente(usuarioClient.obtenerUsuarioPorId(docenteIdUsuario).getNombreCompleto());
+                    } catch (Exception e) {
+                        dto.setNombreDocente("Docente no disponible");
+                    }
+                }
             }
         }
 

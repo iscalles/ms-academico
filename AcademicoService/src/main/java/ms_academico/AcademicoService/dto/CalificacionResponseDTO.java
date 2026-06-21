@@ -18,6 +18,7 @@ public class CalificacionResponseDTO {
     private Long idEvaluacion;
     private String nombreEvaluacion;
     private String nombreAsignatura;
+    private String nombreDocente;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaEvaluacion;
@@ -89,6 +90,14 @@ public class CalificacionResponseDTO {
 
     public void setNombreAsignatura(String nombreAsignatura) {
         this.nombreAsignatura = nombreAsignatura;
+    }
+
+    public String getNombreDocente() {
+        return nombreDocente;
+    }
+
+    public void setNombreDocente(String nombreDocente) {
+        this.nombreDocente = nombreDocente;
     }
 
     public LocalDate getFechaEvaluacion() {
