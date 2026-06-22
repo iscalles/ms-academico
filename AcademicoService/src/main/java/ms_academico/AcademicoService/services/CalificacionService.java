@@ -1,5 +1,6 @@
 package ms_academico.academicoservice.services;
 
+import ms_academico.academicoservice.dto.CalificacionLoteRequestDTO;
 import ms_academico.academicoservice.dto.CalificacionRequestDTO;
 import ms_academico.academicoservice.dto.CalificacionResponseDTO;
 
@@ -13,4 +14,5 @@ public interface CalificacionService {
     CalificacionResponseDTO crearCalificacion(CalificacionRequestDTO dto);
     CalificacionResponseDTO actualizarCalificacion(CalificacionRequestDTO dto, Long id);
     void eliminarCalificacion(Long id);
+    List<CalificacionResponseDTO> registrarCalificacionesLote(CalificacionLoteRequestDTO dto);
 }

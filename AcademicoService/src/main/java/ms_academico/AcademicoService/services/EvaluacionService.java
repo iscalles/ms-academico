@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface EvaluacionService {
     List<EvaluacionResponseDTO> listarEvaluacion();
+    List<EvaluacionResponseDTO> listarEvaluacionesPorCursoAsignatura(Long idCursoAsignatura);
     EvaluacionResponseDTO buscarEvaluacionPorId(Long id);
     EvaluacionResponseDTO crearEvaluacion(EvaluacionRequestDTO dto);
     EvaluacionResponseDTO actualizarEvaluacion(EvaluacionRequestDTO dto, Long id);

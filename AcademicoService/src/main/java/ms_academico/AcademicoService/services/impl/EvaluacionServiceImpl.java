@@ -68,6 +68,13 @@ public class EvaluacionServiceImpl implements EvaluacionService {
     }
 
     @Override
+    public List<EvaluacionResponseDTO> listarEvaluacionesPorCursoAsignatura(Long idCursoAsignatura) {
+        return evaluacionRepository.findAllByCursoAsignatura_Id(idCursoAsignatura).stream()
+                .map(this::toResponseDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public EvaluacionResponseDTO buscarEvaluacionPorId(Long id) {
         Evaluacion evaluacion = evaluacionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Evaluacion no encontrada con id: " + id));

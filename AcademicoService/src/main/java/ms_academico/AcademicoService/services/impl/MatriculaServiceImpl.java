@@ -39,6 +39,7 @@ public class MatriculaServiceImpl implements MatriculaService {
         try {
             UsuarioDTOInternal usuario = usuarioClient.obtenerUsuarioPorId(m.getEstudianteIdUsuario());
             dto.setNombreEstudiante(usuario.getNombreCompleto());
+            dto.setRutEstudiante(usuario.getRutUsuario());
         } catch (Exception e) {
             dto.setNombreEstudiante("Usuario no disponible");
         }
