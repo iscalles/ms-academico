@@ -93,7 +93,8 @@ spring.jpa.show-sql=true
 |---|---|---|
 | GET | `/curso-asignatura` | Listar todas las relaciones |
 | GET | `/curso-asignatura/{id}` | Buscar por ID |
-| POST | `/curso-asignatura` | Asociar asignatura a curso |
+| POST | `/curso-asignatura` | Asociar asignatura a curso (asigna un docente vía `docenteIdUsuario`) |
+| PUT | `/curso-asignatura/{id}` | Actualizar asociación (ej. reasignar docente) |
 | DELETE | `/curso-asignatura/{id}` | Eliminar asociación |
 
 ### Evaluaciones (`/evaluaciones`)
@@ -101,6 +102,7 @@ spring.jpa.show-sql=true
 |---|---|---|
 | GET | `/evaluaciones` | Listar todas las evaluaciones |
 | GET | `/evaluaciones/{id}` | Buscar evaluación por ID |
+| GET | `/evaluaciones/curso-asignatura/{idCursoAsignatura}` | Evaluaciones de una asignatura dictada en un curso específico |
 | POST | `/evaluaciones` | Crear evaluación |
 | PUT | `/evaluaciones/{id}` | Actualizar evaluación |
 | DELETE | `/evaluaciones/{id}` | Eliminar evaluación |
@@ -110,17 +112,31 @@ spring.jpa.show-sql=true
 |---|---|---|
 | GET | `/calificaciones` | Listar todas las calificaciones |
 | GET | `/calificaciones/{id}` | Buscar por ID |
-| GET | `/calificaciones/id_evaluacion/{id}` | Calificaciones de una evaluación |
-| GET | `/calificaciones/id_matricula/{id}` | Calificaciones de un alumno matriculado |
-| POST | `/calificaciones` | Registrar calificación |
+| GET | `/calificaciones/id_evaluacion/{id_evaluacion}` | Calificaciones de una evaluación |
+| GET | `/calificaciones/id_matricula/{id_matricula}` | Calificaciones de un alumno matriculado |
+| POST | `/calificaciones` | Registrar calificación individual |
+| POST | `/calificaciones/lote` | Registrar las calificaciones de varios alumnos para una misma evaluación en una sola petición |
 | PUT | `/calificaciones/{id}` | Actualizar calificación |
 | DELETE | `/calificaciones/{id}` | Eliminar calificación |
+
+**Body de `POST /calificaciones/lote`:**
+```json
+{
+  "idEvaluacion": 1,
+  "creadoPorIdUsuario": 502,
+  "detalles": [
+    { "idMatricula": 10, "notaCalificacion": 6.2 },
+    { "idMatricula": 11, "notaCalificacion": 5.5 }
+  ]
+}
+```
 
 ### Matrículas (`/matriculas`)
 | Método | Ruta | Descripción |
 |---|---|---|
 | GET | `/matriculas` | Listar todas las matrículas |
 | GET | `/matriculas/{id}` | Buscar matrícula por ID |
+| GET | `/matriculas/curso/{idCurso}` | Listar las matrículas (alumnos) de un curso |
 | POST | `/matriculas` | Crear matrícula |
 | PUT | `/matriculas/{id}` | Actualizar matrícula |
 | DELETE | `/matriculas/{id}` | Eliminar matrícula |
