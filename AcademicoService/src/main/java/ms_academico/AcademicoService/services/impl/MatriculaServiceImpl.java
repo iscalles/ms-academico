@@ -39,6 +39,7 @@ public class MatriculaServiceImpl implements MatriculaService {
         try {
             UsuarioDTOInternal usuario = usuarioClient.obtenerUsuarioPorId(m.getEstudianteIdUsuario());
             dto.setNombreEstudiante(usuario.getNombreCompleto());
+            dto.setRutEstudiante(usuario.getRutUsuario());
         } catch (Exception e) {
             dto.setNombreEstudiante("Usuario no disponible");
         }
@@ -71,6 +72,13 @@ public class MatriculaServiceImpl implements MatriculaService {
     @Override
     public List<MatriculaResponseDTO> listarMatriculas() {
         return matriculaRepository.findAll().stream()
+                .map(this::toResponseDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<MatriculaResponseDTO> listarMatriculasPorCurso(Long idCurso) {
+        return matriculaRepository.findAllByCursoIdCurso_Id(idCurso).stream()
                 .map(this::toResponseDTO)
                 .collect(Collectors.toList());
     }

@@ -29,6 +29,11 @@ public class MatriculaController {
         return ResponseEntity.ok(service.buscarMatriculaPorId(id));
     }
 
+    @GetMapping("/curso/{idCurso}")
+    public ResponseEntity<List<MatriculaResponseDTO>> listarMatriculasPorCurso(@PathVariable Long idCurso) {
+        return ResponseEntity.ok(service.listarMatriculasPorCurso(idCurso));
+    }
+
     @PostMapping
     public ResponseEntity<MatriculaResponseDTO> crearMatricula(@RequestBody MatriculaRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.crearMatricula(dto));

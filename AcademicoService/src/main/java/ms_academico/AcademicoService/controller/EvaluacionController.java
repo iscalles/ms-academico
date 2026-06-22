@@ -29,6 +29,11 @@ public class EvaluacionController {
         return ResponseEntity.ok(service.buscarEvaluacionPorId(id));
     }
 
+    @GetMapping("/curso-asignatura/{idCursoAsignatura}")
+    public ResponseEntity<List<EvaluacionResponseDTO>> listarEvaluacionesPorCursoAsignatura(@PathVariable Long idCursoAsignatura) {
+        return ResponseEntity.ok(service.listarEvaluacionesPorCursoAsignatura(idCursoAsignatura));
+    }
+
     @PostMapping
     public ResponseEntity<EvaluacionResponseDTO> crearEvaluacion(@RequestBody EvaluacionRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.crearEvaluacion(dto));

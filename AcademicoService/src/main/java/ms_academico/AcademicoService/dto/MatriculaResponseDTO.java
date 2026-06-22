@@ -7,6 +7,7 @@ public class MatriculaResponseDTO {
     private Long estudianteIdUsuario;
 
     private String nombreEstudiante;
+    private String rutEstudiante;
 
     private Long idCurso;
     private String gradoCurso;
@@ -45,6 +46,14 @@ public class MatriculaResponseDTO {
 
     public void setNombreEstudiante(String nombreEstudiante) {
         this.nombreEstudiante = nombreEstudiante;
+    }
+
+    public String getRutEstudiante() {
+        return rutEstudiante;
+    }
+
+    public void setRutEstudiante(String rutEstudiante) {
+        this.rutEstudiante = rutEstudiante;
     }
 
     public Long getIdCurso() {

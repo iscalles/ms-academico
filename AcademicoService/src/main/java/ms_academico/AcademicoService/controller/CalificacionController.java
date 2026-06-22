@@ -1,5 +1,6 @@
 package ms_academico.academicoservice.controller;
 
+import ms_academico.academicoservice.dto.CalificacionLoteRequestDTO;
 import ms_academico.academicoservice.dto.CalificacionRequestDTO;
 import ms_academico.academicoservice.dto.CalificacionResponseDTO;
 import ms_academico.academicoservice.services.CalificacionService;
@@ -42,6 +43,11 @@ public class CalificacionController {
     @PostMapping
     public ResponseEntity<CalificacionResponseDTO> createCalificacion(@RequestBody CalificacionRequestDTO dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.crearCalificacion(dto));
+    }
+
+    @PostMapping("/lote")
+    public ResponseEntity<List<CalificacionResponseDTO>> registrarCalificacionesLote(@RequestBody CalificacionLoteRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.registrarCalificacionesLote(dto));
     }
 
     @PutMapping("/{id}")
